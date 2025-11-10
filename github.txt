@@ -1,6 +1,4 @@
-                                                                                                                                                                                         flutter clean
-flutter pub get
-flutter build apk --release
+
 
 
 git config --global user.name "muhamedayman66"
@@ -11,6 +9,6 @@ git init
 git add .
 git commit -m "Initial commit"
 git branch -M main
-git remote add origin https://github.com/muhamedayman66/remaxbarahform.git
+git remote add origin https://github.com/muhamedayman66/bytecraftwebsite.git
 git push -u origin main
 
