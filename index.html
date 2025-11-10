@@ -8,6 +8,7 @@
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
+/* ========== BASE STYLES ========== */
 * {
     margin: 0;
     padding: 0;
@@ -34,7 +35,7 @@ body {
     line-height: 1.6;
 }
 
-/* Animated Background */
+/* ========== ANIMATED BACKGROUND ========== */
 .bg-animation {
     position: fixed;
     top: 0;
@@ -59,7 +60,6 @@ body {
     background: var(--primary);
     top: -200px;
     left: -200px;
-    animation-delay: 0s;
 }
 
 .blob-2 {
@@ -81,18 +81,12 @@ body {
 }
 
 @keyframes float {
-    0%, 100% {
-        transform: translate(0, 0) scale(1);
-    }
-    33% {
-        transform: translate(100px, -100px) scale(1.1);
-    }
-    66% {
-        transform: translate(-100px, 100px) scale(0.9);
-    }
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(100px, -100px) scale(1.1); }
+    66% { transform: translate(-100px, 100px) scale(0.9); }
 }
 
-/* Navbar */
+/* ========== NAVBAR ========== */
 nav {
     position: fixed;
     top: 0;
@@ -108,9 +102,7 @@ nav {
 nav.scrolled {
     background: rgba(10, 14, 39, 0.95);
     box-shadow: 0 10px 40px rgba(184, 76, 255, 0.15);
-    padding: 0.3rem 5%;
 }
-
 
 .nav-container {
     display: flex;
@@ -124,40 +116,16 @@ nav.scrolled {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #e0f7ff;
     text-decoration: none;
     transition: transform 0.3s ease;
 }
 
-.logo-container:hover {
-    transform: scale(1.05);
-}
+.logo-container:hover { transform: scale(1.05); }
 
 .logo-image {
     width: 120px;
     height: auto;
     object-fit: contain;
-}
-
-.logo-icon {
-    width: 45px;
-    height: 45px;
-    background: linear-gradient(135deg, #00e6ff, #b84cff);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-    box-shadow: 0 5px 20px rgba(184, 76, 255, 0.3);
-}
-
-.logo-text span {
-    background: linear-gradient(135deg, #00e6ff, #b84cff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 .nav-links {
@@ -176,9 +144,7 @@ nav.scrolled {
     position: relative;
 }
 
-.nav-links a:hover {
-    color: #00e6ff;
-}
+.nav-links a:hover { color: #00e6ff; }
 
 .nav-links a::before {
     content: '';
@@ -191,9 +157,7 @@ nav.scrolled {
     transition: width 0.3s ease;
 }
 
-.nav-links a:hover::before {
-    width: 100%;
-}
+.nav-links a:hover::before { width: 100%; }
 
 .nav-cta {
     background: linear-gradient(135deg, #00e6ff, #b84cff);
@@ -201,7 +165,6 @@ nav.scrolled {
     padding: 0.7rem 1.8rem;
     border-radius: 50px;
     font-weight: 600;
-    transition: all 0.3s ease;
 }
 
 .nav-cta:hover {
@@ -209,9 +172,7 @@ nav.scrolled {
     box-shadow: 0 10px 30px rgba(184, 76, 255, 0.4);
 }
 
-.nav-cta::before {
-    display: none;
-}
+.nav-cta::before { display: none; }
 
 .menu-toggle {
     display: none;
@@ -228,14 +189,14 @@ nav.scrolled {
     transition: all 0.3s ease;
 }
 
-/* Hero Section */
+/* ========== HERO SECTION ========== */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 8rem 5% 4rem;
+    padding: 10rem 5% 4rem;
     position: relative;
 }
 
@@ -259,9 +220,7 @@ nav.scrolled {
     animation: fadeInDown 0.8s ease;
 }
 
-.hero-badge i {
-    animation: pulse 2s infinite;
-}
+.hero-badge i { animation: pulse 2s infinite; }
 
 @keyframes pulse {
     0%, 100% { opacity: 1; }
@@ -314,8 +273,6 @@ nav.scrolled {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    position: relative;
-    overflow: hidden;
 }
 
 .btn-primary {
@@ -362,55 +319,7 @@ nav.scrolled {
     }
 }
 
-.floating-icons {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-}
-
-.float-icon {
-    position: absolute;
-    font-size: 3rem;
-    opacity: 0.1;
-    animation: floatRandom 15s infinite ease-in-out;
-}
-
-.float-icon:nth-child(1) {
-    top: 20%;
-    left: 10%;
-    animation-delay: 0s;
-}
-
-.float-icon:nth-child(2) {
-    top: 60%;
-    right: 15%;
-    animation-delay: 5s;
-}
-
-.float-icon:nth-child(3) {
-    bottom: 20%;
-    left: 20%;
-    animation-delay: 10s;
-}
-
-@keyframes floatRandom {
-    0%, 100% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-    25% {
-        transform: translate(20px, -20px) rotate(5deg);
-    }
-    50% {
-        transform: translate(-20px, 20px) rotate(-5deg);
-    }
-    75% {
-        transform: translate(20px, 20px) rotate(5deg);
-    }
-}
-
+/* ========== SECTIONS ========== */
 .section {
     padding: 6rem 5%;
     max-width: 1400px;
@@ -451,6 +360,7 @@ nav.scrolled {
     margin: 0 auto;
 }
 
+/* ========== SERVICES SECTION ========== */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -481,9 +391,7 @@ nav.scrolled {
     transition: opacity 0.4s ease;
 }
 
-.service-card:hover::before {
-    opacity: 1;
-}
+.service-card:hover::before { opacity: 1; }
 
 .service-card:hover {
     transform: translateY(-10px);
@@ -525,6 +433,7 @@ nav.scrolled {
     z-index: 1;
 }
 
+/* ========== ABOUT SECTION ========== */
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -590,6 +499,7 @@ nav.scrolled {
     margin: 0;
 }
 
+/* ========== CONTACT SECTION ========== */
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -650,10 +560,9 @@ nav.scrolled {
     margin-bottom: 0.3rem;
 }
 
-.contact-text span {
-    color: var(--gray);
-}
+.contact-text span { color: var(--gray); }
 
+/* ========== CONTACT FORM ========== */
 .contact-form {
     background: var(--card-bg);
     backdrop-filter: blur(10px);
@@ -662,9 +571,7 @@ nav.scrolled {
     border: 1px solid rgba(0, 212, 255, 0.1);
 }
 
-.form-group {
-    margin-bottom: 1.8rem;
-}
+.form-group { margin-bottom: 1.8rem; }
 
 .form-group label {
     display: block;
@@ -702,23 +609,15 @@ nav.scrolled {
     resize: vertical;
 }
 
-/* Phone Input Container */
 .phone-input-container {
     display: flex;
     gap: 1rem;
 }
 
-.country-code-select {
-    flex: 0 0 140px;
-}
+.country-code-select { flex: 0 0 140px; }
+.phone-number-input { flex: 1; }
 
-.phone-number-input {
-    flex: 1;
-}
-
-.form-group select {
-    cursor: pointer;
-}
+.form-group select { cursor: pointer; }
 
 .form-group select option {
     background: var(--dark);
@@ -732,15 +631,14 @@ nav.scrolled {
     display: none;
 }
 
-.error-message.show {
-    display: block;
-}
+.error-message.show { display: block; }
 
 .form-group.error input,
 .form-group.error select {
     border-color: #ff6b6b;
 }
 
+/* ========== FOOTER ========== */
 footer {
     background: var(--dark);
     padding: 4rem 5% 2rem;
@@ -800,13 +698,9 @@ footer {
     color: var(--primary);
 }
 
-.footer-links ul {
-    list-style: none;
-}
+.footer-links ul { list-style: none; }
 
-.footer-links ul li {
-    margin-bottom: 0.8rem;
-}
+.footer-links ul li { margin-bottom: 0.8rem; }
 
 .footer-links ul li a {
     color: var(--gray);
@@ -828,7 +722,7 @@ footer {
     color: var(--gray);
 }
 
-/* Success Modal Styles */
+/* ========== SUCCESS MODAL ========== */
 .success-modal {
     position: fixed;
     top: 0;
@@ -846,9 +740,7 @@ footer {
     padding: 1rem;
 }
 
-.success-modal.show {
-    opacity: 1;
-}
+.success-modal.show { opacity: 1; }
 
 .success-modal-content {
     background: var(--card-bg);
@@ -906,68 +798,25 @@ footer {
     font-size: 1.05rem;
 }
 
-.success-modal-content .btn {
-    margin-top: 1.5rem;
-}
+.success-modal-content .btn { margin-top: 1.5rem; }
 
-/* ==================== RESPONSIVE DESIGN ==================== */
-
-/* Tablet (1024px and below) */
+/* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 1024px) {
-    .hero h1 {
-        font-size: 4rem;
-    }
-    
-    .section-title {
-        font-size: 3rem;
-    }
-    
-    .about-content,
-    .contact-container {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    .services-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
+    .hero h1 { font-size: 4rem; }
+    .section-title { font-size: 3rem; }
+    .about-content, .contact-container { grid-template-columns: 1fr; gap: 3rem; }
+    .footer-content { grid-template-columns: 1fr 1fr; }
+    .services-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 }
 
-/* Tablet Small & Mobile Large (768px and below) */
 @media (max-width: 768px) {
-    /* Background Blobs - تصغير الأحجام */
-    .blob-1 {
-        width: 300px;
-        height: 300px;
-    }
+    .blob-1 { width: 300px; height: 300px; }
+    .blob-2 { width: 250px; height: 250px; }
+    .blob-3 { width: 350px; height: 350px; }
     
-    .blob-2 {
-        width: 250px;
-        height: 250px;
-    }
-    
-    .blob-3 {
-        width: 350px;
-        height: 350px;
-    }
-    
-    /* Navbar Mobile */
-    nav {
-        padding: 1rem 4%;
-    }
-    
-    .logo-image {
-        width: 100px;
-    }
-    
-    .menu-toggle {
-        display: flex;
-        z-index: 1001;
-    }
+    nav { padding: 1rem 4%; }
+    .logo-image { width: 100px; }
+    .menu-toggle { display: flex; z-index: 1001; }
     
     .nav-links {
         position: fixed;
@@ -984,591 +833,155 @@ footer {
         overflow-y: auto;
     }
     
-    .nav-links.active {
-        left: 0;
-    }
+    .nav-links.active { left: 0; }
+    .nav-links li { width: 100%; }
+    .nav-links a { display: block; padding: 1rem; font-size: 1.1rem; text-align: center; }
+    .nav-cta { width: 100%; justify-content: center; padding: 1rem 2rem; }
     
-    .nav-links li {
-        width: 100%;
-    }
+    .hero { padding: 8rem 4% 3rem; min-height: auto; }
+    .hero h1 { font-size: 2.8rem; letter-spacing: -1px; margin-bottom: 1rem; }
+    .hero p { font-size: 1.05rem; margin-bottom: 2rem; }
+    .hero-badge { font-size: 0.8rem; padding: 0.5rem 1.2rem; }
+    .cta-buttons { flex-direction: column; width: 100%; gap: 1rem; }
+    .btn { width: 100%; justify-content: center; padding: 1rem 2rem; font-size: 0.95rem; }
     
-    .nav-links a {
-        display: block;
-        padding: 1rem;
-        font-size: 1.1rem;
-        text-align: center;
-    }
+    .section { padding: 4rem 4%; }
+    .section-header { margin-bottom: 3rem; }
+    .section-badge { font-size: 0.75rem; padding: 0.4rem 1.2rem; }
+    .section-title { font-size: 2.2rem; margin-bottom: 0.8rem; }
+    .section-subtitle { font-size: 1rem; }
     
-    .nav-cta {
-        width: 100%;
-        justify-content: center;
-        padding: 1rem 2rem;
-    }
+    .services-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .service-card { padding: 2rem; }
+    .service-card h3 { font-size: 1.4rem; }
+    .service-card p { font-size: 0.95rem; }
+    .service-icon { width: 70px; height: 70px; font-size: 2rem; }
     
-    /* Hero Section Mobile */
-    .hero {
-        padding: 6rem 4% 3rem;
-        min-height: auto;
-    }
+    .about-text h2 { font-size: 2.2rem; }
+    .about-text p { font-size: 1rem; }
+    .feature-item { padding: 1.2rem; flex-direction: column; text-align: center; }
+    .feature-item:hover { transform: translateY(-5px); }
+    .feature-icon { width: 60px; height: 60px; font-size: 1.8rem; }
+    .feature-text h4 { font-size: 1.1rem; }
+    .feature-text p { font-size: 0.9rem; }
     
-    .hero h1 {
-        font-size: 2.8rem;
-        letter-spacing: -1px;
-        margin-bottom: 1rem;
-    }
+    .contact-info h2 { font-size: 2.2rem; }
+    .contact-info p { font-size: 1rem; margin-bottom: 2rem; }
+    .contact-item { padding: 1.2rem; flex-direction: column; text-align: center; }
+    .contact-item:hover { transform: translateY(-5px); }
+    .contact-icon { width: 50px; height: 50px; font-size: 1.3rem; }
+    .contact-text strong { font-size: 1rem; }
+    .contact-text span { font-size: 0.9rem; }
     
-    .hero p {
-        font-size: 1.05rem;
-        margin-bottom: 2rem;
-    }
+    .contact-form { padding: 2rem; }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label { font-size: 0.9rem; }
+    .form-group input, .form-group textarea, .form-group select { padding: 1rem; font-size: 0.95rem; }
+    .phone-input-container { flex-direction: column; gap: 1rem; }
+    .country-code-select { flex: 1; }
     
-    .hero-badge {
-        font-size: 0.8rem;
-        padding: 0.5rem 1.2rem;
-    }
+    footer { padding: 3rem 4% 1.5rem; }
+    .footer-content { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
+    .footer-about h3 { font-size: 1.5rem; }
+    .footer-about p { font-size: 0.95rem; }
+    .social-links { justify-content: center; }
+    .footer-links h4 { font-size: 1.1rem; }
+    .footer-links ul li a { font-size: 0.9rem; }
+    .footer-links ul li a:hover { padding-left: 0; }
+    .footer-bottom { font-size: 0.85rem; }
     
-    .cta-buttons {
-        flex-direction: column;
-        width: 100%;
-        gap: 1rem;
-    }
-    
-    .btn {
-        width: 100%;
-        justify-content: center;
-        padding: 1rem 2rem;
-        font-size: 0.95rem;
-    }
-    
-    /* Floating Icons - تقليل الحجم */
-    .float-icon {
-        font-size: 2rem;
-        opacity: 0.08;
-    }
-    
-    /* Sections */
-    .section {
-        padding: 4rem 4%;
-    }
-    
-    .section-header {
-        margin-bottom: 3rem;
-    }
-    
-    .section-badge {
-        font-size: 0.75rem;
-        padding: 0.4rem 1.2rem;
-    }
-    
-    .section-title {
-        font-size: 2.2rem;
-        margin-bottom: 0.8rem;
-    }
-    
-    .section-subtitle {
-        font-size: 1rem;
-    }
-    
-    /* Services Grid */
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .service-card {
-        padding: 2rem;
-    }
-    
-    .service-card h3 {
-        font-size: 1.4rem;
-    }
-    
-    .service-card p {
-        font-size: 0.95rem;
-    }
-    
-    .service-icon {
-        width: 70px;
-        height: 70px;
-        font-size: 2rem;
-    }
-    
-    /* About Section */
-    .about-text h2 {
-        font-size: 2.2rem;
-    }
-    
-    .about-text p {
-        font-size: 1rem;
-    }
-    
-    .feature-item {
-        padding: 1.2rem;
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .feature-item:hover {
-        transform: translateY(-5px);
-    }
-    
-    .feature-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 1.8rem;
-    }
-    
-    .feature-text h4 {
-        font-size: 1.1rem;
-    }
-    
-    .feature-text p {
-        font-size: 0.9rem;
-    }
-    
-    /* Contact Section */
-    .contact-info h2 {
-        font-size: 2.2rem;
-    }
-    
-    .contact-info p {
-        font-size: 1rem;
-        margin-bottom: 2rem;
-    }
-    
-    .contact-item {
-        padding: 1.2rem;
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .contact-item:hover {
-        transform: translateY(-5px);
-    }
-    
-    .contact-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.3rem;
-    }
-    
-    .contact-text strong {
-        font-size: 1rem;
-    }
-    
-    .contact-text span {
-        font-size: 0.9rem;
-    }
-    
-    /* Contact Form */
-    .contact-form {
-        padding: 2rem;
-    }
-    
-    .form-group {
-        margin-bottom: 1.5rem;
-    }
-    
-    .form-group label {
-        font-size: 0.9rem;
-    }
-    
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-        padding: 1rem;
-        font-size: 0.95rem;
-    }
-    
-    .phone-input-container {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .country-code-select {
-        flex: 1;
-    }
-    
-    /* Footer */
-    footer {
-        padding: 3rem 4% 1.5rem;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-        text-align: center;
-    }
-    
-    .footer-about h3 {
-        font-size: 1.5rem;
-    }
-    
-    .footer-about p {
-        font-size: 0.95rem;
-    }
-    
-    .social-links {
-        justify-content: center;
-    }
-    
-    .footer-links h4 {
-        font-size: 1.1rem;
-    }
-    
-    .footer-links ul li a {
-        font-size: 0.9rem;
-    }
-    
-    .footer-links ul li a:hover {
-        padding-left: 0;
-    }
-    
-    .footer-bottom {
-        font-size: 0.85rem;
-    }
-    
-    /* Success Modal Mobile */
-    .success-modal {
-        padding: 1rem;
-    }
-    
-    .success-modal-content {
-        padding: 2rem 1.5rem;
-    }
-    
-    .success-icon {
-        width: 80px;
-        height: 80px;
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .success-modal-content h2 {
-        font-size: 1.5rem;
-    }
-    
-    .success-modal-content p {
-        font-size: 0.95rem;
-    }
+    .success-modal { padding: 1rem; }
+    .success-modal-content { padding: 2rem 1.5rem; }
+    .success-icon { width: 80px; height: 80px; font-size: 2.5rem; margin-bottom: 1.5rem; }
+    .success-modal-content h2 { font-size: 1.5rem; }
+    .success-modal-content p { font-size: 0.95rem; }
 }
 
-/* Mobile Small (480px and below) */
 @media (max-width: 480px) {
-    /* Hero Section */
-    .hero {
-        padding: 5rem 3% 2rem;
-    }
+    .hero { padding: 7rem 3% 2rem; }
+    .hero h1 { font-size: 2rem; letter-spacing: -0.5px; }
+    .hero p { font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .hero-badge { font-size: 0.75rem; padding: 0.4rem 1rem; }
+    .btn { padding: 0.9rem 1.5rem; font-size: 0.9rem; }
     
-    .hero h1 {
-        font-size: 2rem;
-        letter-spacing: -0.5px;
-    }
+    .section { padding: 3rem 3%; }
+    .section-header { margin-bottom: 2.5rem; }
+    .section-title { font-size: 1.8rem; }
+    .section-subtitle { font-size: 0.9rem; }
+    .logo-image { width: 80px; }
     
-    .hero p {
-        font-size: 0.95rem;
-        margin-bottom: 1.5rem;
-    }
+    .service-card { padding: 1.5rem; }
+    .service-card h3 { font-size: 1.2rem; }
+    .service-card p { font-size: 0.9rem; }
+    .service-icon { width: 60px; height: 60px; font-size: 1.8rem; margin-bottom: 1.5rem; }
     
-    .hero-badge {
-        font-size: 0.75rem;
-        padding: 0.4rem 1rem;
-    }
+    .about-text h2 { font-size: 1.8rem; }
+    .about-text p { font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .feature-item { padding: 1rem; }
+    .feature-icon { width: 50px; height: 50px; font-size: 1.5rem; }
+    .feature-text h4 { font-size: 1rem; }
+    .feature-text p { font-size: 0.85rem; }
     
-    /* Buttons */
-    .btn {
-        padding: 0.9rem 1.5rem;
-        font-size: 0.9rem;
-    }
+    .contact-info h2 { font-size: 1.8rem; }
+    .contact-info p { font-size: 0.9rem; }
+    .contact-item { padding: 1rem; }
+    .contact-icon { width: 45px; height: 45px; font-size: 1.2rem; }
+    .contact-text strong { font-size: 0.95rem; }
+    .contact-text span { font-size: 0.85rem; }
     
-    /* Sections */
-    .section {
-        padding: 3rem 3%;
-    }
+    .contact-form { padding: 1.5rem; }
+    .form-group input, .form-group textarea, .form-group select { padding: 0.9rem; font-size: 0.9rem; }
+    .form-group textarea { min-height: 120px; }
     
-    .section-header {
-        margin-bottom: 2.5rem;
-    }
+    .footer-about h3 { font-size: 1.3rem; }
+    .footer-about p { font-size: 0.85rem; line-height: 1.6; }
+    .social-links a { width: 45px; height: 45px; font-size: 1.1rem; }
+    .footer-links h4 { font-size: 1rem; margin-bottom: 1rem; }
+    .footer-links ul li { margin-bottom: 0.6rem; }
+    .footer-links ul li a { font-size: 0.85rem; }
+    .footer-bottom { font-size: 0.8rem; padding-top: 1.5rem; }
     
-    .section-title {
-        font-size: 1.8rem;
-    }
-    
-    .section-subtitle {
-        font-size: 0.9rem;
-    }
-    
-    /* Logo */
-    .logo-image {
-        width: 80px;
-    }
-    
-    .logo-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1.1rem;
-    }
-    
-    /* Service Cards */
-    .service-card {
-        padding: 1.5rem;
-    }
-    
-    .service-card h3 {
-        font-size: 1.2rem;
-    }
-    
-    .service-card p {
-        font-size: 0.9rem;
-    }
-    
-    .service-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 1.8rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    /* About Section */
-    .about-text h2 {
-        font-size: 1.8rem;
-    }
-    
-    .about-text p {
-        font-size: 0.9rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .feature-item {
-        padding: 1rem;
-    }
-    
-    .feature-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-    }
-    
-    .feature-text h4 {
-        font-size: 1rem;
-    }
-    
-    .feature-text p {
-        font-size: 0.85rem;
-    }
-    
-    /* Contact Section */
-    .contact-info h2 {
-        font-size: 1.8rem;
-    }
-    
-    .contact-info p {
-        font-size: 0.9rem;
-    }
-    
-    .contact-item {
-        padding: 1rem;
-    }
-    
-    .contact-icon {
-        width: 45px;
-        height: 45px;
-        font-size: 1.2rem;
-    }
-    
-    .contact-text strong {
-        font-size: 0.95rem;
-    }
-    
-    .contact-text span {
-        font-size: 0.85rem;
-    }
-    
-    /* Contact Form */
-    .contact-form {
-        padding: 1.5rem;
-    }
-    
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-        padding: 0.9rem;
-        font-size: 0.9rem;
-    }
-    
-    .form-group textarea {
-        min-height: 120px;
-    }
-    
-    /* Footer */
-    .footer-about h3 {
-        font-size: 1.3rem;
-    }
-    
-    .footer-about p {
-        font-size: 0.85rem;
-        line-height: 1.6;
-    }
-    
-    .social-links a {
-        width: 45px;
-        height: 45px;
-        font-size: 1.1rem;
-    }
-    
-    .footer-links h4 {
-        font-size: 1rem;
-        margin-bottom: 1rem;
-    }
-    
-    .footer-links ul li {
-        margin-bottom: 0.6rem;
-    }
-    
-    .footer-links ul li a {
-        font-size: 0.85rem;
-    }
-    
-    .footer-bottom {
-        font-size: 0.8rem;
-        padding-top: 1.5rem;
-    }
-    
-    /* Success Modal */
-    .success-modal-content {
-        padding: 1.5rem 1rem;
-        border-radius: 20px;
-    }
-    
-    .success-icon {
-        width: 70px;
-        height: 70px;
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-    
-    .success-modal-content h2 {
-        font-size: 1.3rem;
-        margin-bottom: 0.8rem;
-    }
-    
-    .success-modal-content p {
-        font-size: 0.85rem;
-        line-height: 1.6;
-    }
-    
-    .success-modal-content .btn {
-        margin-top: 1rem;
-        padding: 0.8rem 1.5rem;
-        font-size: 0.85rem;
-    }
+    .success-modal-content { padding: 1.5rem 1rem; border-radius: 20px; }
+    .success-icon { width: 70px; height: 70px; font-size: 2rem; margin-bottom: 1rem; }
+    .success-modal-content h2 { font-size: 1.3rem; margin-bottom: 0.8rem; }
+    .success-modal-content p { font-size: 0.85rem; line-height: 1.6; }
+    .success-modal-content .btn { margin-top: 1rem; padding: 0.8rem 1.5rem; font-size: 0.85rem; }
 }
 
-/* Mobile Extra Small (360px and below) */
 @media (max-width: 360px) {
-    .hero h1 {
-        font-size: 1.7rem;
-    }
-    
-    .section-title {
-        font-size: 1.6rem;
-    }
-    
-    .logo-image {
-        width: 70px;
-    }
-    
-    nav {
-        padding: 0.8rem 3%;
-    }
-    
-    .service-card,
-    .feature-item,
-    .contact-item {
-        padding: 1.2rem;
-    }
-    
-    .contact-form {
-        padding: 1.2rem;
-    }
-    
-    .btn {
-        padding: 0.8rem 1.2rem;
-        font-size: 0.85rem;
-    }
+    .hero h1 { font-size: 1.7rem; }
+    .section-title { font-size: 1.6rem; }
+    .logo-image { width: 70px; }
+    nav { padding: 0.8rem 3%; }
+    .service-card, .feature-item, .contact-item { padding: 1.2rem; }
+    .contact-form { padding: 1.2rem; }
+    .btn { padding: 0.8rem 1.2rem; font-size: 0.85rem; }
 }
 
-/* Landscape Mobile */
 @media (max-width: 768px) and (orientation: landscape) {
-    .hero {
-        min-height: auto;
-        padding: 4rem 4% 2rem;
-    }
-    
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero p {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .cta-buttons {
-        flex-direction: row;
-        justify-content: center;
-    }
-    
-    .btn {
-        width: auto;
-        padding: 0.9rem 2rem;
-    }
-    
-    .nav-links {
-        height: 100vh;
-    }
+    .hero { min-height: auto; padding: 4rem 4% 2rem; }
+    .hero h1 { font-size: 2.5rem; }
+    .hero p { font-size: 1rem; margin-bottom: 1.5rem; }
+    .cta-buttons { flex-direction: row; justify-content: center; }
+    .btn { width: auto; padding: 0.9rem 2rem; }
+    .nav-links { height: 100vh; }
 }
 
-/* Fix for very small heights */
 @media (max-height: 600px) {
-    .hero {
-        min-height: auto;
-        padding: 4rem 5% 2rem;
-    }
-    
-    .section {
-        padding: 3rem 5%;
-    }
-}
-
-/* Print Styles */
-@media print {
-    .bg-animation,
-    .floating-icons,
-    nav,
-    .menu-toggle,
-    .success-modal {
-        display: none !important;
-    }
-    
-    body {
-        background: white;
-        color: black;
-    }
-    
-    .section {
-        page-break-inside: avoid;
-    }
+    .hero { min-height: auto; padding: 4rem 5% 2rem; }
+    .section { padding: 3rem 5%; }
 }
     </style>
 </head>
 <body>
+    <!-- Background Animation -->
     <div class="bg-animation">
         <div class="gradient-blob blob-1"></div>
         <div class="gradient-blob blob-2"></div>
         <div class="gradient-blob blob-3"></div>
     </div>
 
+    <!-- Navbar -->
     <nav id="navbar">
         <div class="nav-container">
             <a href="#home" class="logo-container">
@@ -1588,26 +1001,27 @@ footer {
         </div>
     </nav>
 
-<section class="hero" id="home">
-    <div class="hero-content">
-        <div class="hero-badge">
-            <i class="fas fa-sparkles"></i>
-            <span>Innovative Digital Solutions</span>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-sparkles"></i>
+                <span>Innovative Digital Solutions</span>
+            </div>
+            <h1>Building The <span class="gradient-text">Future</span> With Smart Software</h1>
+            <p>Transform your business with cutting-edge web and mobile applications. We deliver innovative solutions that drive growth and success in the digital age.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    Get Started
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="https://github.com/bytecrafteg" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    <i class="fas fa-external-link-alt"></i>
+                    View Our Work
+                </a>
+            </div>
         </div>
-        <h1>Building The <span class="gradient-text">Future</span> With Smart Software</h1>
-        <p>Transform your business with cutting-edge web and mobile applications. We deliver innovative solutions that drive growth and success in the digital age.</p>
-        <div class="cta-buttons">
-            <a href="#contact" class="btn btn-primary">
-                Get Started
-                <i class="fas fa-arrow-right"></i>
-            </a>
-            <a href="https://github.com/bytecrafteg" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                <i class="fas fa-external-link-alt"></i>
-                View Our Work
-            </a>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Services Section -->
     <section class="section" id="services">
@@ -1618,50 +1032,39 @@ footer {
         </div>
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-globe"></i>
-                </div>
+                <div class="service-icon"><i class="fas fa-globe"></i></div>
                 <h3>Web Development</h3>
                 <p>Custom web applications built with cutting-edge technologies. Responsive, scalable, and optimized for exceptional performance and user experience.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
+                <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
                 <h3>Mobile Apps</h3>
                 <p>Native and cross-platform mobile applications that deliver seamless experiences on iOS and Android with intuitive interfaces.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-rocket"></i>
-                </div>
+                <div class="service-icon"><i class="fas fa-rocket"></i></div>
                 <h3>Digital Solutions</h3>
                 <p>End-to-end digital transformation services including cloud solutions, APIs, system integration, and innovative tech consulting.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-paint-brush"></i>
-                </div>
+                <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
                 <h3>UI/UX Design</h3>
                 <p>Beautiful, intuitive interfaces designed with your users in mind. We create engaging experiences that convert visitors into customers.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-database"></i>
-                </div>
+                <div class="service-icon"><i class="fas fa-database"></i></div>
                 <h3>Backend Systems</h3>
                 <p>Robust and scalable backend infrastructure with secure databases, powerful APIs, and efficient server architecture.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-headset"></i>
-                </div>
+                <div class="service-icon"><i class="fas fa-headset"></i></div>
                 <h3>Support & Maintenance</h3>
                 <p>24/7 technical support and continuous maintenance to ensure your applications run smoothly and stay up-to-date.</p>
             </div>
         </div>
     </section>
 
+    <!-- About Section -->
     <section class="section" id="about">
         <div class="section-header">
             <span class="section-badge">ABOUT US</span>
@@ -1676,36 +1079,28 @@ footer {
             </div>
             <div class="features-list">
                 <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
                     <div class="feature-text">
                         <h4>Fast Delivery</h4>
                         <p>Quick turnaround without compromising quality</p>
                     </div>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-code"></i></div>
                     <div class="feature-text">
                         <h4>Quality Code</h4>
                         <p>Clean, maintainable, and scalable solutions</p>
                     </div>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-rocket"></i></div>
                     <div class="feature-text">
                         <h4>Modern Technology</h4>
                         <p>Latest frameworks and industry best practices</p>
                     </div>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-hands-helping"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-hands-helping"></i></div>
                     <div class="feature-text">
                         <h4>Full Support</h4>
                         <p>24/7 assistance and continuous maintenance</p>
@@ -1715,6 +1110,7 @@ footer {
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section class="section" id="contact">
         <div class="section-header">
             <span class="section-badge">CONTACT US</span>
@@ -1727,27 +1123,21 @@ footer {
                 <p>Ready to start your project? We're excited to work with you and bring your ideas to life with the latest technologies and innovative solutions.</p>
                 <div class="contact-details">
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                         <div class="contact-text">
                             <strong>Email</strong>
                             <span>bytecrafttechnologies.eg@gmail.com</span>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
                         <div class="contact-text">
                             <strong>Phone</strong>
                             <span>+20 01272945513</span>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div class="contact-text">
                             <strong>Location</strong>
                             <span>Asyut, Egypt</span>
@@ -1805,24 +1195,17 @@ footer {
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-about">
                 <h3><span class="gradient-text">ByteCraft</span></h3>
                 <p>Building the future with smart software. We specialize in creating innovative web and mobile applications that drive digital transformation.</p>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=61583595810903" target="_blank" title="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.instagram.com/bytecraft.tech/" target="_blank" title="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/bytecraft-technologies-a30751398/" target="_blank" title="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/bytecrafteg" target="_blank" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61583595810903" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/bytecraft.tech/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/bytecraft-technologies-a30751398/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/bytecrafteg" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
                 </div>
             </div>
             <div class="footer-links">
@@ -1857,7 +1240,7 @@ footer {
     </footer>
 
     <script>
-        // Phone validation patterns for different countries
+        // Phone Validation Patterns
         const phonePatterns = {
             '+20': { pattern: /^(010|011|012|015)\d{8}$/, length: 11, example: '01012345678' },
             '+966': { pattern: /^5\d{8}$/, length: 9, example: '512345678' },
@@ -1881,31 +1264,23 @@ footer {
             '+44': { pattern: /^7\d{9}$/, length: 10, example: '7123456789' }
         };
 
-        // Validate phone number
+        // Validate Phone Function
         function validatePhone(countryCode, phoneNumber) {
             const validation = phonePatterns[countryCode];
             if (!validation) return true;
-            
             const cleanNumber = phoneNumber.replace(/\D/g, '');
             return validation.pattern.test(cleanNumber) && cleanNumber.length === validation.length;
         }
 
-        // Update placeholder based on country code
+        // Update Placeholder on Country Code Change
         document.getElementById('countryCode').addEventListener('change', function() {
-            const countryCode = this.value;
-            const phoneInput = document.getElementById('whatsapp');
-            const validation = phonePatterns[countryCode];
-            
-            if (validation) {
-                phoneInput.placeholder = validation.example;
-            }
-            
-            // Clear error if exists
+            const validation = phonePatterns[this.value];
+            if (validation) document.getElementById('whatsapp').placeholder = validation.example;
             document.getElementById('phoneError').classList.remove('show');
             document.querySelector('.form-group').classList.remove('error');
         });
 
-        // Real-time phone validation
+        // Real-time Phone Validation
         document.getElementById('whatsapp').addEventListener('input', function() {
             const countryCode = document.getElementById('countryCode').value;
             const phoneNumber = this.value;
@@ -1926,206 +1301,137 @@ footer {
             }
         });
 
-        // Form submission with Google Sheets
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzgmRJ6iB2VDGaOQ1oIqGe7RaS4LyccaGEc3unyTgOCQ1QGSQxnbvUPV77TkKd6weqs/exec';
+        // Form Submission
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzgmRJ6iB2VDGaOQ1oIqGe7RaS4LyccaGEc3unyTgOCQ1QGSQxnbvUPV77TkKd6weqs/exec';
 
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const btn = this.querySelector('button[type="submit"]');
-    const originalText = btn.innerHTML;
-    
-    const countryCode = document.getElementById('countryCode').value;
-    const phoneNumber = document.getElementById('whatsapp').value;
-    
-    if (!validatePhone(countryCode, phoneNumber)) {
-        document.getElementById('phoneError').classList.add('show');
-        document.querySelector('.phone-input-container').closest('.form-group').classList.add('error');
-        return;
-    }
-    
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    btn.disabled = true;
-    
-    const formData = {
-        name: document.getElementById('name').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        whatsapp: countryCode + phoneNumber.replace(/\s/g, ''),
-        message: document.getElementById('message').value.trim()
-    };
-    
-    console.log('Sending:', formData);
-    
-    const form = new FormData();
-    form.append('name', formData.name);
-    form.append('email', formData.email);
-    form.append('whatsapp', formData.whatsapp);
-    form.append('message', formData.message);
-    
-    try {
-        const response = await fetch(SCRIPT_URL, {
-            method: 'POST',
-            body: form
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            const countryCode = document.getElementById('countryCode').value;
+            const phoneNumber = document.getElementById('whatsapp').value;
+            
+            if (!validatePhone(countryCode, phoneNumber)) {
+                document.getElementById('phoneError').classList.add('show');
+                document.querySelector('.phone-input-container').closest('.form-group').classList.add('error');
+                return;
+            }
+            
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            btn.disabled = true;
+            
+            const formData = {
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                whatsapp: countryCode + phoneNumber.replace(/\s/g, ''),
+                message: document.getElementById('message').value.trim()
+            };
+            
+            const form = new FormData();
+            form.append('name', formData.name);
+            form.append('email', formData.email);
+            form.append('whatsapp', formData.whatsapp);
+            form.append('message', formData.message);
+            
+            try {
+                const response = await fetch(SCRIPT_URL, { method: 'POST', body: form });
+                const text = await response.text();
+                let result;
+                try { result = JSON.parse(text); } catch (e) { result = { result: 'success' }; }
+                
+                if (result.result === 'success' || text.includes('success')) {
+                    showSuccessModal();
+                    this.reset();
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                } else {
+                    throw new Error(result.message || 'Submission failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                handleSubmissionError(btn, originalText, formData);
+            }
         });
-        
-        const text = await response.text();
-        console.log('Response:', text);
-        
-        let result;
-        try {
-            result = JSON.parse(text);
-        } catch (e) {
-            result = { result: 'success' };
-        }
-        
-        if (result.result === 'success' || text.includes('success')) {
-            showSuccessModal();
-            this.reset();
-            btn.innerHTML = originalText;
-            btn.disabled = false;
-        } else {
-            throw new Error(result.message || 'Submission failed');
-        }
-        
-    } catch (error) {
-        console.error('Error:', error);
-        handleSubmissionError(btn, originalText, formData);
-    }
-});
 
-function handleSubmissionError(btn, originalText, formData) {
-    btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error';
-    btn.style.background = 'linear-gradient(135deg, #ff6b6b, #ee5a6f)';
-    
-    const errorModal = `
-        <div class="success-modal show" id="errorModal">
-            <div class="success-modal-content">
-                <div class="success-icon" style="background: linear-gradient(135deg, #ff6b6b, #ee5a6f);">
-                    <i class="fas fa-exclamation-circle"></i>
+        // Handle Submission Error
+        function handleSubmissionError(btn, originalText, formData) {
+            btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error';
+            btn.style.background = 'linear-gradient(135deg, #ff6b6b, #ee5a6f)';
+            
+            const errorModal = `
+                <div class="success-modal show" id="errorModal">
+                    <div class="success-modal-content">
+                        <div class="success-icon" style="background: linear-gradient(135deg, #ff6b6b, #ee5a6f);">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <h2 style="color: #ff6b6b;">Oops! Something went wrong</h2>
+                        <p>Sorry, we couldn't send your message. You can contact us directly:</p>
+                        <div style="text-align: left; background: rgba(0,0,0,0.05); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0;">
+                            <p style="margin: 0.5rem 0;"><strong>📧 Email:</strong><br>
+                            <a href="mailto:bytecrafttechnologies.eg@gmail.com" style="color: #00D4FF;">bytecrafttechnologies.eg@gmail.com</a></p>
+                            <p style="margin: 0.5rem 0;"><strong>📱 WhatsApp:</strong><br>
+                            <a href="https://wa.me/201272945513?text=${encodeURIComponent('Hello, I\'d like to contact ByteCraft Technologies')}" style="color: #25D366;">+20 01272945513</a></p>
+                        </div>
+                        <button class="btn btn-primary" onclick="document.getElementById('errorModal').remove()">OK <i class="fas fa-check"></i></button>
+                        <button class="btn btn-secondary" onclick="openWhatsApp(${JSON.stringify(formData).replace(/"/g, '&quot;')})" style="margin-top: 1rem;">
+                            <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                        </button>
+                    </div>
                 </div>
-                <h2 style="color: #ff6b6b;">Oops! Something went wrong</h2>
-                <p>Sorry, we couldn't send your message. You can contact us directly:</p>
-                <div style="text-align: left; background: rgba(0,0,0,0.05); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0;">
-                    <p style="margin: 0.5rem 0;"><strong>📧 Email:</strong><br>
-                    <a href="mailto:bytecrafttechnologies.eg@gmail.com" style="color: #00D4FF;">bytecrafttechnologies.eg@gmail.com</a></p>
-                    <p style="margin: 0.5rem 0;"><strong>📱 WhatsApp:</strong><br>
-                    <a href="https://wa.me/201272945513?text=${encodeURIComponent('Hello, I’d like to contact ByteCraft Technologies')}" style="color: #25D366;">+20 01272945513</a></p>
-                </div>
-                <button class="btn btn-primary" onclick="document.getElementById('errorModal').remove()">
-                    OK
-                    <i class="fas fa-check"></i>
-                </button>
-                <button class="btn btn-secondary" onclick="openWhatsApp(${JSON.stringify(formData).replace(/"/g, '&quot;')})" style="margin-top: 1rem;">
-                    <i class="fab fa-whatsapp"></i>
-                    Send via WhatsApp
-                </button>
-            </div>
-        </div>
-    `;
-    
-    document.body.insertAdjacentHTML('beforeend', errorModal);
-    
-    setTimeout(() => {
-        btn.innerHTML = originalText;
-        btn.style.background = '';
-        btn.disabled = false;
-    }, 3000);
-}
+            `;
+            
+            document.body.insertAdjacentHTML('beforeend', errorModal);
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.background = '';
+                btn.disabled = false;
+            }, 3000);
+        }
 
-function openWhatsApp(formData) {
-    const message = `*Message from ByteCraft Website*\n\n` +
-                   `*Name:* ${formData.name}\n` +
-                   `*Email:* ${formData.email}\n` +
-                   `*WhatsApp:* ${formData.whatsapp}\n\n` +
-                   `*Message:*\n${formData.message}`;
-    
-    window.open(`https://wa.me/201272945513?text=${encodeURIComponent(message)}`, '_blank');
-    document.getElementById('errorModal')?.remove();
-}
+        // Open WhatsApp Function
+        function openWhatsApp(formData) {
+            const message = `*Message from ByteCraft Website*\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*WhatsApp:* ${formData.whatsapp}\n\n*Message:*\n${formData.message}`;
+            window.open(`https://wa.me/201272945513?text=${encodeURIComponent(message)}`, '_blank');
+            document.getElementById('errorModal')?.remove();
+        }
 
-function showSuccessModal() {
-    const modal = document.createElement('div');
-    modal.className = 'success-modal';
-    modal.innerHTML = `
-        <div class="success-modal-content">
-            <div class="success-icon">
-                <i class="fas fa-check-circle"></i>
-            </div>
-            <h2>Message Sent Successfully! ✨</h2>
-            <p>Thank you for contacting <strong>ByteCraft Technologies</strong>.</p>
-            <p>We’ve received your message and will get back to you soon.</p>
-            <button class="btn btn-primary" onclick="closeSuccessModal()">
-                Great!
-                <i class="fas fa-thumbs-up"></i>
-            </button>
-        </div>
-    `;
-    document.body.appendChild(modal);
-    
-    setTimeout(() => {
-        modal.classList.add('show');
-    }, 10);
-}
-
-function closeSuccessModal() {
-    const modal = document.querySelector('.success-modal');
-    modal.classList.remove('show');
-    setTimeout(() => {
-        modal.remove();
-    }, 300);
-}
-
-        // Success Modal Functions
+        // Show Success Modal
         function showSuccessModal() {
             const modal = document.createElement('div');
             modal.className = 'success-modal';
             modal.innerHTML = `
                 <div class="success-modal-content">
-                    <div class="success-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h2>Message Sent Successfully!</h2>
-                    <p>Thank you for reaching out to ByteCraft Technologies. We have received your message and our team will review it shortly.</p>
-                    <p>We'll get back to you as soon as possible via your provided contact information.</p>
-                    <button class="btn btn-primary" onclick="closeSuccessModal()">
-                        Got it!
-                        <i class="fas fa-thumbs-up"></i>
-                    </button>
+                    <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                    <h2>Message Sent Successfully! ✨</h2>
+                    <p>Thank you for contacting <strong>ByteCraft Technologies</strong>.</p>
+                    <p>We've received your message and will get back to you soon.</p>
+                    <button class="btn btn-primary" onclick="closeSuccessModal()">Great! <i class="fas fa-thumbs-up"></i></button>
                 </div>
             `;
             document.body.appendChild(modal);
-            
-            // Trigger animation
-            setTimeout(() => {
-                modal.classList.add('show');
-            }, 10);
+            setTimeout(() => modal.classList.add('show'), 10);
         }
 
+        // Close Success Modal
         function closeSuccessModal() {
             const modal = document.querySelector('.success-modal');
             modal.classList.remove('show');
-            setTimeout(() => {
-                modal.remove();
-            }, 300);
+            setTimeout(() => modal.remove(), 300);
         }
 
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
+        // Navbar Scroll Effect
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            if (window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
         });
 
-        // Mobile menu toggle
+        // Mobile Menu Toggle
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
         
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            
             const spans = menuToggle.querySelectorAll('span');
             if (navLinks.classList.contains('active')) {
                 spans[0].style.transform = 'rotate(45deg) translate(8px, 8px)';
@@ -2138,7 +1444,7 @@ function closeSuccessModal() {
             }
         });
 
-        // Close menu when clicking on a link
+        // Close Menu on Link Click
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -2149,27 +1455,20 @@ function closeSuccessModal() {
             });
         });
 
-        // Smooth scrolling
+        // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     const offsetTop = target.offsetTop - 80;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
                 }
             });
         });
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        // Intersection Observer for Animations
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -2184,16 +1483,6 @@ function closeSuccessModal() {
             el.style.transform = 'translateY(40px)';
             el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
             observer.observe(el);
-        });
-
-        // Parallax effect for floating icons
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const floatIcons = document.querySelectorAll('.float-icon');
-            floatIcons.forEach((icon, index) => {
-                const speed = 0.5 + (index * 0.2);
-                icon.style.transform = `translateY(${scrolled * speed}px)`;
-            });
         });
     </script>
 </body>
